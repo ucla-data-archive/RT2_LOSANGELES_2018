@@ -65,10 +65,8 @@ __highlight the "Untracked files" section and that git tells you how to add a fi
 * The "untracked files" message means that there's a file in the directory that Git isn't keeping track of.
 
 **Now, lets add files that are inside:**
-1. On the white board draw a box representing the **staging area** (index) and explain that this is where we set up the next snapshot of our project.
-1. Like a **photographer in a studio**, we're putting together a shot before we actually snap the picture.
-1. Connect the working area box and the staging box with 'git add'._
 
+1. Like a **photographer in a studio**, we're putting together a shot before we actually snap the picture.
 * Note: we can use `git add .` - This adds __all__ the files in our repository.
 * But sometimes we only want to add a single file at a time.
 
@@ -117,7 +115,7 @@ $ git commit -m "Starting to think about Mars"
 ~~~
 
 * When we run `git commit`, Git takes everything we have told it to save by using `git add` and stores a copy permanently inside the special `.git` directory.
-* This permanent copy is called a [revision](../../gloss.html#revision) and its short identifier is `f22b25e`.
+* This permanent copy is called a **revision** and its short identifier is `f22b25e`.
 (Your revision may have another identifier.)
 
 * We use the `-m` flag (for "message") to record a comment that will help us remember later on what we did and why.
@@ -127,7 +125,7 @@ $ git commit -m "Starting to think about Mars"
 * NOTE: If you only want to add one file, use `git commit filename.txt -m "message"`
 `git commit -am "message"` will add ALL tracked files.
 
-**On the white board draw a box representing the project history.**
+[staging and commit hist](https://deidrewhitmore.github.io/swc_git_20190110/fig/git-staging-area.svg)
 
 1. Once we take a snapshot of the project that snapshot becomes a permanent reference point in the project's history that we can always go back to.
 2. The history is like a **photo album of changes**, and each snapshot has a **time stamp**, the **name of the photographer**, and a **description**.
@@ -140,20 +138,13 @@ $ git commit -m "Starting to think about Mars"
 __ADVICE: Commit often__
 
 * In the same way that it is wise to often save a document that you are working on, so too is it wise to save numerous revisions of your code.
-* More frequent commits increase the granularity of your undo button. If you commit every 1, you have an hour undo button, if you commit every day, you'll have a day's long undo button.
-* There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful.
+* More frequent commits increase the granularity of your **undo button**. If you commit every 1, you have an hour undo button, if you commit every day, you'll have a day's long undo button.
+* There are no hard and fast rules, but good commits are **atomic: they are the smallest change that remain meaningful**.
 * A good commit message usually contains a one-line description followed by a longer explanation if necessary.
 
 __ADVICE: Good commit messages__
 
 [because it's important!](http://www.commitlogsfromlastnight.com/)
-
-* For code, it's useful to commit changes that can be reviewed by someone in under an hour.
-* Or it can be useful to commit changes that "go together" - for example, one paragraph of a manuscript, or each new function added to your script.
-* For example:
-  * if you work on your code all day long (add 200 lines of code, including 5 new functions and write 7 pages of your new manuscript including deleting an old paragraph),
-  * and at 3:00 you make a fatal error or deletion, but you didn't commit once, then you will have a hard time recreating the version you are looking for - because it doesn't exist!
-
 
 If we run `git status` now:
 
@@ -267,7 +258,7 @@ telling them how to reconstruct one file given the other.
 
 1.  The first line tells us that Git is producing output similar to the Unix `diff` command
     comparing the old and new versions of the file.
-2.  The second line tells exactly which [revisions](../../gloss.html#revision) of the file
+2.  The second line tells exactly which revisions of the file
     Git is comparing;
     `df0654a` and `315bf3a` are unique computer-generated labels for those revisions.
 3.  The remaining lines show us the actual differences
@@ -318,7 +309,7 @@ because we may not want to commit everything at once.
 * To allow for this,
 Git has a special staging area
 where it keeps track of things that have been added to
-the current [change set](../../gloss.html#change-set)
+the current change set
 but not yet committed.
 * `git add` puts things in this area, and `git commit` then copies them to long-term storage (as a commit):
 
